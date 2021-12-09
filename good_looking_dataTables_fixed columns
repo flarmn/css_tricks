@@ -1,0 +1,20 @@
+Шаг 1:
+Скопировать себе в файл стилей все из файла plugins/fixedColumns/fixedColumns.css все кроме этих строк:
+/* 
+.DTFC_RightBodyLiner,
+.DTFC_LeftBodyLiner {
+    overflow: hidden !important;
+    height: unset !important;
+    max-height: unset !important;
+}
+*/
+
+Шаг 2. Отключить plugins/fixedColumns/fixedColumns.css от страницы
+Шаг 3. Установить в файле стилей фиксированную ширину для каждого столбца и заголовка, который должен быть закреплен.
+Шаг 4. Обязательно!!!(Совет от создателей dataTables) Указать параметр min-width равный width в css для каждого столбца и заголовка, который должен быть закреплен
+Шаг 5. При инициализации dataTables указать параметры: 
+  "autoWidth": true,
+  fixedColumns: {
+        leftColumns: число столбцов слева, которые нужно закрепить
+      },
+Шаг 6. Далее всё как всегда делаем для dataTables
